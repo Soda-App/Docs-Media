@@ -14,3 +14,6 @@ To generate media, you can add the following params to the URL.
 | `subtitle` | String  | The subtitle of the media                |
 | `logo`     | Boolean | Whether the app logo should be displayed |
 | `dark`     | Boolean | Whether the media should be dark         |
+
+### Example
+![Example](.github/media/example.png)
