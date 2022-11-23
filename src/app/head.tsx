@@ -7,6 +7,7 @@ export default function Head() {
 				name="description"
 				content="Generate media that can be used on the Soda docs."
 			/>
+			<meta name="theme-color" content="#a953b8" />
 		</>
 	);
 }
