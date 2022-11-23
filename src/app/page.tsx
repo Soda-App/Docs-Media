@@ -1,6 +1,54 @@
+"use client";
+
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+
 export default function Home() {
+	const searchParams = useSearchParams();
+	const title = searchParams.get("title");
+	const subtitle = searchParams.get("subtitle");
+	const logo = searchParams.get("logo");
+	const dark = searchParams.get("dark");
+
+	// Handle media inputs
+	if (title) {
+		return (
+			<div className={`${dark && "dark"}`}>
+				<div className="w-screen h-screen min-w-min dark:bg-black">
+					<div className="flex gap-6 p-20 divide-x divide-gray-400 text-9xl dark:text-white">
+						<div className="flex flex-col items-center">
+							{/* Display the logo if requested */}
+							{logo && (
+								<Image
+									src="/logo.png"
+									alt="Soda Logo"
+									width={128}
+									height={128}
+									unoptimized
+								/>
+							)}
+
+							{/* App Name */}
+							<h1 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500">
+								Soda
+							</h1>
+						</div>
+						<div className="flex flex-col justify-center pl-6">
+							{/* Title */}
+							<h2 className="font-bold">{title}</h2>
+
+							{/* Display the subtitle if provided */}
+							{subtitle && <h3 className="font-thin text-7xl">{subtitle}</h3>}
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	// Default Page
 	return (
-		<div className="flex flex-col items-center justify-center h-screen text-center text-white">
+		<div className="flex flex-col items-center justify-center h-screen text-center text-white bg-black">
 			<h1 className="text-4xl font-bold">Docs Media</h1>
 			<h2 className="max-w-lg text-xl">
 				Used to generate media that can be used on Soda&apos;s documentation.
