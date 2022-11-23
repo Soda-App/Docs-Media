@@ -8,6 +8,7 @@ Used to generate media that can be used on Soda's documentation.
 
 To generate media, you can add the following params to the URL.
 
-| Param   | Description            |
-| ------- | ---------------------- |
-| `title` | The title of the media |
+| Param   | Type    | Description                             |
+| ------- | ------- | --------------------------------------- |
+| `title` | String  | The title of the media                  |
+| `dark`  | Boolean | Whether the media should be dark or not |
