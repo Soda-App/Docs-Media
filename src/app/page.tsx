@@ -5,16 +5,21 @@ import { useSearchParams } from "next/navigation";
 
 export default function Home() {
 	const searchParams = useSearchParams();
-	const title = searchParams.get("title");
-	const subtitle = searchParams.get("subtitle");
+	let title = searchParams.get("title");
+	let subtitle = searchParams.get("subtitle");
 	const logo = searchParams.get("logo");
 	const dark = searchParams.get("dark");
 
 	// Handle media inputs
 	if (title) {
+		title = title.substring(0, 32); // Limit the title
+		// Limit the subtitle
+		if (subtitle) {
+			subtitle = subtitle.substring(0, 200);
+		}
 		return (
 			<div className={`${dark && "dark"}`}>
-				<div className="w-screen h-screen min-w-min dark:bg-black">
+				<div className="w-screen h-screen dark:bg-black">
 					<div className="flex gap-6 p-20 divide-x divide-gray-400 text-9xl dark:text-white">
 						<div className="flex flex-col items-center">
 							{/* Display the logo if requested */}
@@ -33,7 +38,7 @@ export default function Home() {
 								Soda
 							</h1>
 						</div>
-						<div className="flex flex-col justify-center pl-6">
+						<div className="flex flex-col justify-center max-w-5xl pl-6 break-all">
 							{/* Title */}
 							<h2 className="font-bold">{title}</h2>
 
