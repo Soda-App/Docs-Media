@@ -3,6 +3,7 @@ version: "3.4"
 services:
   docsmedia:
     image: docsmedia
+    container_name: soda_docsmedia
     restart: unless-stopped
     build:
       context: .
