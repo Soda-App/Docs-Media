@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/Soda-App/Docs-Media",
   "author": "Soda <developers@sodaapp.net>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
