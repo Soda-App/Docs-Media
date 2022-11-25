@@ -2,7 +2,7 @@
   "name": "docs-media",
   "version": "1.0.0",
   "repository": "https://github.com/Soda-App/Docs-Media",
-	"author": "Soda <developers@sodaapp.net>",
+  "author": "Soda <developers@sodaapp.net>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
